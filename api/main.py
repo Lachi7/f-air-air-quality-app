@@ -4,20 +4,21 @@ from data_app import app as data_app
 from forecast_app import router as forecast_router
 
 app = FastAPI(title="F-Air Combined API")
-app.include_router(forecast_router, prefix="/api/forecast")
-
 
 # Add CORS middleware once
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000","https://f-air-air-quality-app-ctfq.vercel.app"],  # your frontend URLs
+    allow_origins=[
+        "http://localhost:3000",
+        "https://f-air-air-quality-app-ctfq.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Mount data_app under /api/data
+# Mount the /api/data app
 app.mount("/api/data", data_app)
 
-# Include forecast router under /api/forecast
+# Mount the /api/forecast routes
 app.include_router(forecast_router, prefix="/api/forecast")

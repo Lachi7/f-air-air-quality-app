@@ -1,5 +1,4 @@
 from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware  # ADD THIS
 import requests
 from datetime import datetime, timedelta
 import numpy as np
@@ -7,14 +6,6 @@ import meteomatics as api
 
 app = FastAPI(title="F-Air Data Service")
 
-# ADD CORS MIDDLEWARE
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000","https://f-air-air-quality-app-ctfq.vercel.app"],  # React dev server
-    allow_credentials=True,
-    allow_methods=["*"],  # Allow all methods
-    allow_headers=["*"],  # Allow all headers
-)
 USERNAME = "aliyeva_nazrin"
 PASSWORD = "0YX42bxz2QXp6Os1NcKR"
 
@@ -51,7 +42,7 @@ def get_real_tempo_no2(lat, lon):
             pass
         
         return np.random.uniform(1e15, 5e15)
-@app.get("/data")
+@app.get("/")
 async def get_air_data(lat: float = 34.05, lon: float = -118.24):
     try:
         date = datetime.now().strftime('%Y-%m-%d')

@@ -1,27 +1,12 @@
 from fastapi import APIRouter, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
 import numpy as np
 import os
-from sklearn.ensemble import RandomForestRegressor
-import pickle
 import requests
 from datetime import datetime
 
-
 router = APIRouter()
 
-
-
-# CORS middleware
-router.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000","https://f-air-air-quality-app-ctfq.vercel.app"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 NASA_EARTHDATA_USERNAME = os.getenv('NASA_EARTHDATA_USERNAME', 'nasa_naz78')
-
 def get_historical_tempo_patterns(lat, lon):
     """Get historical TEMPO patterns for better forecasting"""
     try:
