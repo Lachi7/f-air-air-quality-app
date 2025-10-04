@@ -51,7 +51,7 @@ def get_real_tempo_no2(lat, lon):
             pass
         
         return np.random.uniform(1e15, 5e15)
-@app.get("/api/data")
+@app.get("/data")
 async def get_air_data(lat: float = 34.05, lon: float = -118.24):
     try:
         date = datetime.now().strftime('%Y-%m-%d')
@@ -112,7 +112,7 @@ async def get_air_data(lat: float = 34.05, lon: float = -118.24):
             "error": str(e)
         }
 
-@app.get("/api/global")
+@app.get("/global")
 async def get_global_data():
     return [
         {"lat": 34.05, "lon": -118.24, "aqi": 50, "color": "green"},

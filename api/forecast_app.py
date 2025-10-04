@@ -49,7 +49,7 @@ def get_historical_tempo_patterns(lat, lon):
         print(f"Historical pattern error: {e}")
         return 1.0
 
-@app.get("/api/forecast")
+@app.get("/forecast")
 async def get_forecast(lat: float, lon: float, category: str = "general"):
     try:
         # Get current data
