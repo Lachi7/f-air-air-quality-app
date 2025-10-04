@@ -18,8 +18,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Mount the /api/data app
-app.mount("/api/data", data_app)
-
-# Include the forecast router under /api/forecast
+app.include_router(data_app, prefix="/api/data")
 app.include_router(forecast_router, prefix="/api/forecast")

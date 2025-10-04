@@ -36,8 +36,10 @@ def get_historical_tempo_patterns(lat, lon):
     except Exception as e:
         print(f"Historical pattern error: {e}")
         return 1.0
-
-@router.get("/forecast")
+@router.get("/")
+async def root():
+    return {"message": "Forecast root working"}
+@router.get("")
 async def get_forecast(lat: float, lon: float, category: str = "general"):
     try:
         # Get current data
