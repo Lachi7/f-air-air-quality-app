@@ -19,7 +19,7 @@ const API_BASE = (process.env.REACT_APP_API_URL || (process.env.NODE_ENV === 'pr
 
 
 const FORECAST_API_BASE = process.env.NODE_ENV === 'production' 
-  ? 'https://f-air-air-quality-app-production.up.railway.app/' 
+  ? 'https://f-air-air-quality-app-production.up.railway.app' 
   : 'http://localhost:8001';
 
 // leaflet config (keep this)

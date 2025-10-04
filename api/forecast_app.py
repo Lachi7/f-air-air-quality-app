@@ -12,7 +12,7 @@ app = FastAPI(title="F-Air Forecast Service")
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["http://localhost:3000","https://f-air-air-quality-app-c76j.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
