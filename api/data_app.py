@@ -10,7 +10,7 @@ app = FastAPI(title="F-Air Data Service")
 # ADD CORS MIDDLEWARE
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000","https://f-air-air-quality-app-c76j.vercel.app"],  # React dev server
+    allow_origins=["http://localhost:3000","https://f-air-air-quality-app-ctfq.vercel.app"],  # React dev server
     allow_credentials=True,
     allow_methods=["*"],  # Allow all methods
     allow_headers=["*"],  # Allow all headers
