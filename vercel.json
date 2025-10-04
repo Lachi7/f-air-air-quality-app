@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "/api/data", "destination": "/api/data_app.py" },
+      { "source": "/api/forecast", "destination": "/api/forecast_app.py" }
+    ]
+  }
