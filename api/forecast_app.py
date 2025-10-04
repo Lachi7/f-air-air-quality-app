@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import APIRouter, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import numpy as np
 import os
@@ -7,10 +7,13 @@ import pickle
 import requests
 from datetime import datetime
 
-app = FastAPI(title="F-Air Forecast Service")
+
+router = APIRouter()
+
+
 
 # CORS middleware
-app.add_middleware(
+router.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000","https://f-air-air-quality-app-ctfq.vercel.app"],
     allow_credentials=True,
@@ -49,7 +52,7 @@ def get_historical_tempo_patterns(lat, lon):
         print(f"Historical pattern error: {e}")
         return 1.0
 
-@app.get("/forecast")
+@router.get("/forecast")
 async def get_forecast(lat: float, lon: float, category: str = "general"):
     try:
         # Get current data
