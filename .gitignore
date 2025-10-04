@@ -1,4 +1,8 @@
-.env
-node_modules/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.pytest_cache/
