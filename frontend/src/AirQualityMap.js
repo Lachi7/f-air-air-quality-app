@@ -14,11 +14,11 @@ import CityDetailsPage from "./CityDetailsPage";
 
 // API configuration - KEEP THIS AT TOP LEVEL
 const API_BASE = process.env.NODE_ENV === 'production' 
-  ? 'https://your-app.vercel.app/api' 
+  ? 'https://f-air-air-quality-app-production.up.railway.app/' 
   : 'http://localhost:8000';
 
 const FORECAST_API_BASE = process.env.NODE_ENV === 'production' 
-  ? 'https://your-app.vercel.app/api' 
+  ? 'https://f-air-air-quality-app-production.up.railway.app/' 
   : 'http://localhost:8001';
 
 // leaflet config (keep this)
