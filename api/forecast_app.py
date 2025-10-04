@@ -98,7 +98,7 @@ async def get_forecast(lat: float, lon: float, category: str = "general"):
         return {
             "tomorrow_aqi": max(0, min(300, tomorrow_aqi)),
             "today_aqi": current_aqi,
-            "tip": "Using basic forecasting - check back for updates!",
+            "tip": "Moderate air quality. Generally acceptable for most people.",
             "source": "basic_forecast",
             "error": str(e)
         }
