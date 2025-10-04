@@ -92,6 +92,9 @@ export default function AirQualityMap() {
   const mapRef = useRef();
 
   useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL}/api/air`)
+    .then(res => res.json())
+    .then(data => console.log(data))
     if (selectedCoords) {
       console.log("🔄 FETCHING DATA for:", selectedCoords);
       console.log("📡 API URL:", `${API_BASE}/api/data?lat=${selectedCoords.lat}&lon=${selectedCoords.lon}`);
