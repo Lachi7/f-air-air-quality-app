@@ -40,28 +40,28 @@ pip install -r requirements.txt
 # Test the app locally
 uvicorn data_app:app --host 0.0.0.0 --port 8000 --reload
 uvicorn forecast_app:app --host 0.0.0.0 --port 8001 --reload
-
+```
 ### Frontend
 ```bash
 cd frontend
 npm install
 npm start
-
-🌍 Data Sources
+```
+### 🌍 Data Sources
 NASA TEMPO: Nitrogen dioxide (NO₂) satellite data
 
 OpenAQ: Ground-based PM2.5 measurements
 
 Meteomatics: Weather data integration
 
-📱 Deployment
+### 📱 Deployment
 Backend: Deployed on Railway
 
 Frontend: Deployed on Vercel
 
-👥 Team
+### 👥 Team
 Created for NASA Space Apps Challenge 2024
 
-📄 License
+### 📄 License
 MIT License
 
