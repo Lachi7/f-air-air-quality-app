@@ -1,15 +1,15 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import APIRouter, HTTPException
 import requests
 from datetime import datetime, timedelta
 import numpy as np
 import meteomatics as api
 
-app = FastAPI(title="F-Air Data Service")
+router = APIRouter()
 
 USERNAME = "aliyeva_nazrin"
 PASSWORD = "0YX42bxz2QXp6Os1NcKR"
 
-@app.get("/")
+@router.get("/")
 async def root():
     return {"message": "F-Air Data API is running!"}
 def get_real_tempo_no2(lat, lon):
@@ -42,7 +42,7 @@ def get_real_tempo_no2(lat, lon):
             pass
         
         return np.random.uniform(1e15, 5e15)
-@app.get("/data")
+@router.get("/data")
 async def get_air_data(lat: float = 34.05, lon: float = -118.24):
     try:
         date = datetime.now().strftime('%Y-%m-%d')
@@ -103,12 +103,12 @@ async def get_air_data(lat: float = 34.05, lon: float = -118.24):
             "error": str(e)
         }
 
-@app.get("/global")
+@router.get("/global")
 async def get_global_data():
     return [
         {"lat": 34.05, "lon": -118.24, "aqi": 50, "color": "green"},
         {"lat": 40.71, "lon": -74.01, "aqi": 80, "color": "yellow"}
     ]
-@app.get("/test")
+@router.get("/test")
 async def test_endpoint():
     return {"message": "API is working!", "timestamp": datetime.now().isoformat()}
