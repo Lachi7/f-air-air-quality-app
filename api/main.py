@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from api.data_app import app as data_app
-from api.forecast_app import app as forecast_router
+from data_app import app as data_app
+from forecast_app import app as forecast_router
 
 app = FastAPI(title="F-Air Combined API")
 
