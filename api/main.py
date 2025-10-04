@@ -1,3 +1,5 @@
+# main.py
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from data_app import app as data_app
@@ -5,7 +7,6 @@ from forecast_app import router as forecast_router
 
 app = FastAPI(title="F-Air Combined API")
 
-# Add CORS middleware once
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -20,5 +21,5 @@ app.add_middleware(
 # Mount the /api/data app
 app.mount("/api/data", data_app)
 
-# Mount the /api/forecast routes
+# Include the forecast router under /api/forecast
 app.include_router(forecast_router, prefix="/api/forecast")
