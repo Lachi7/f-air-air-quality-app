@@ -1,6 +1,6 @@
 # F-Air 🌤️ Air Quality Forecasting App
 
-**NASA Space Apps Challenge 2024** - Predicting Cleaner, Safer Skies
+**NASA Space Apps Challenge 2025** - Predicting Cleaner, Safer Skies
 
 ## 🚀 Overview
 
